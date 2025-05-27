@@ -22,6 +22,7 @@ public class WindowsTest extends BaseTest {
         interactWithNewMessageWindow();
     }
 
+
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {
 //        driver = new ChromeDriver();

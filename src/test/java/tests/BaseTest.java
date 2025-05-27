@@ -19,6 +19,7 @@ public class BaseTest {
         //facem fereastra browser-ului maximize
         driver.manage().window().maximize();
     }
+
     @AfterMethod
     public void closeBrowser() {
         driver.quit();

@@ -15,7 +15,6 @@ public class CheckBox {
     //de facut din Elements ---> Check Box
     WebDriver driver;
 
-
     @Test
 
     public void checkBoxMethod() throws InterruptedException {

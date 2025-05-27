@@ -69,6 +69,7 @@ public class Airbnb {
         WebElement searchButton = driver.findElement(By.xpath("//button[@data-testid='structured-search-input-search-button']"));
         searchButton.click();
     }
+
     public void createANewAccount() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement accountIcon = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='cypress-headernav-profile']")));

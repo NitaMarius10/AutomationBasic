@@ -58,6 +58,7 @@ public class AlertsPage extends BasePage{
                     + driver.findElement(alertResultText).getText());
         }
     }
+
     public void interactWithPromptBox(String alertValue){
         driver.findElement(confirmPromptButton).click();
         Alert promptAlert = driver.switchTo().alert();

@@ -13,7 +13,6 @@ public class FramesPage extends BasePage {
 
     String expectedText = "This is a sample page";
 
-
     public FramesPage(WebDriver driver) {
         super(driver);
     }

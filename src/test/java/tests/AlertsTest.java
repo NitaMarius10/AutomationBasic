@@ -29,6 +29,7 @@ public class AlertsTest extends BaseTest {
         alertsPage.interactWithConfirmAlert("Cancel");
         alertsPage.interactWithPromptBox("Demetra");
     }
+
 //IMPLEMENTAREA BRUTA A TESTULUI
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {

@@ -59,6 +59,7 @@ public class PracticeFormTest extends BaseTest {
                 break;
             }
         }
+
         //completam field-ul de mobile phone
         WebElement mobilePhoneField = driver.findElement(By.id("userNumber"));
         String mobilePhoneText = "0756950504";

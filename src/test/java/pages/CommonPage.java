@@ -18,6 +18,7 @@ public class CommonPage extends BasePage {
         Assert.assertEquals(driver.getTitle(), "DEMOQA", "Page is not loaded properly");
     }
 
+
     public void goToDesiredSubMenu(String subMenuValue) {
         for (WebElement subMenuName : driver.findElements(subMenuListLocator)) {
             if (subMenuName.getText().equals(subMenuValue)) {

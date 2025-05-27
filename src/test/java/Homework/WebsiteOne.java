@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 public class WebsiteOne {
 
     WebDriver driver;
-
     //initializare browser; gasit un element sau 2; // facut un click, un sendkeys pe elemente;
 
     @Test

@@ -19,6 +19,7 @@ public class DropTest extends BaseTest {
 //        closeBrowser();
     }
 
+
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {
 //        driver = new ChromeDriver();

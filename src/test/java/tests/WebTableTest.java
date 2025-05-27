@@ -29,6 +29,7 @@ public class WebTableTest extends BaseTest {
         fillFormValues();
         validateThatNewRecordsAreAddedProperly();
     }
+
     //facem o metoda care deschide un browser;
 
 //    public void openBrowser() {

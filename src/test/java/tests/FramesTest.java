@@ -26,6 +26,7 @@ public class FramesTest extends BaseTest {
         framesPage.interactWithFrameTwo();
     }
 
+
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {
 //        driver = new ChromeDriver();
