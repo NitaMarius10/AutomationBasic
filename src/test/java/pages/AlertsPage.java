@@ -11,13 +11,13 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class AlertsPage extends BasePage{
-    private By pageTitle= By.xpath("//h1[@class]");
-    private By firstAlertButton= By.id("alertButton");
-    private By timerAlertButton= By.id("timerAlertButton");
-    private By confirmAlertButton=By.id("confirmButton");
-    private By alertResultText=By.id("confirmResult");
-    private By confirmPromptButton=By.id("promtButton");
-    private By promptResult=By.id("promptResult");
+    private By pageTitle = By.xpath("//h1[@class]");
+    private By firstAlertButton = By.id("alertButton");
+    private By timerAlertButton = By.id("timerAlertButton");
+    private By confirmAlertButton = By.id("confirmButton");
+    private By alertResultText = By.id("confirmResult");
+    private By confirmPromptButton = By.id("promtButton");
+    private By promptResult = By.id("promptResult");
 
     public AlertsPage(WebDriver driver) {
         super(driver);

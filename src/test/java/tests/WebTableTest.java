@@ -7,11 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CommonPage;
+import pages.DroppablePage;
+import pages.HomePage;
+import pages.WebTablePage;
 
 import java.util.List;
 
 public class WebTableTest extends BaseTest {
-
+    /*
     public int initialTableSize = 0;
     String firstName= "Firicel";
     String lastName= "Celentano";
@@ -19,15 +23,25 @@ public class WebTableTest extends BaseTest {
     String age= "25";
     String salary= "100000";
     String department= "Testing";
-
+    */
     @Test
     public void webTableTest() {
-        chooseMenu();
-        chooseSubMenu();
-        getTableSize();
-        clickToAddNewRecord();
-        fillFormValues();
-        validateThatNewRecordsAreAddedProperly();
+        HomePage homePage = new HomePage(driver);
+        homePage.isPageLoaded();
+        homePage.goToDesiredMenu("Elements");
+        CommonPage commonPage = new CommonPage(driver);
+        commonPage.isPageLoaded();
+        commonPage.goToDesiredSubMenu("Web Tables");
+        DroppablePage droppablePage = new DroppablePage(driver);
+        droppablePage.isPageLoaded();
+        droppablePage.pickAndDropElement();
+        WebTablePage webTablePage = new WebTablePage(driver);
+        webTablePage.isPageLoaded();
+        webTablePage.webTablePageFlow();
+        //webTablePage.getTableSize();
+        //webTablePage.clickToAddNewRecord();
+        //webTablePage.fillFormValues();
+        //webTablePage.validateThatNewRecordsAreAddedProperly();
     }
 
     //facem o metoda care deschide un browser;
@@ -41,7 +55,7 @@ public class WebTableTest extends BaseTest {
 //    }
 
     //facem o metoda care alege un meniu;
-
+ /*
     public void chooseMenu() {
         //identificam meniul dorit si facem click pe el;
         WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Elements']"));
@@ -114,4 +128,5 @@ public class WebTableTest extends BaseTest {
         Assert.assertTrue(actualTableValues.contains(salary),"Salary value is not correct. Expected salary: " + salary);
         Assert.assertTrue(actualTableValues.contains(department),"Department value is not correct. Expected department: " + department);
     }
+    */
 }

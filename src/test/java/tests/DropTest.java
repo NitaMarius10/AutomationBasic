@@ -8,14 +8,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CommonPage;
+import pages.DroppablePage;
+import pages.HomePage;
 
 public class DropTest extends BaseTest {
 
     @Test
     public void droppableTest() {
-        chooseMenu();
-        chooseSubMenu();
-        pickAndDropElement();
+        HomePage homePage = new HomePage(driver);
+        homePage.isPageLoaded();
+        homePage.goToDesiredMenu("Interactions");
+        CommonPage commonPage = new CommonPage(driver);
+        commonPage.isPageLoaded();
+        commonPage.goToDesiredSubMenu("Droppable");
+        DroppablePage droppablePage = new DroppablePage(driver);
+        droppablePage.isPageLoaded();
+        droppablePage.pickAndDropElement();
 //        closeBrowser();
     }
 
@@ -28,7 +37,7 @@ public class DropTest extends BaseTest {
 //        //facem fereastra browser-ului maximize
 //        driver.manage().window().maximize();
 //    }
-
+ /*
     //facem o metoda care alege un meniu;
     public void chooseMenu() {
         //identificam meniul dorit si facem click pe el;
@@ -54,15 +63,8 @@ public class DropTest extends BaseTest {
 //    public void closeBrowser() {
 //        driver.quit();
 //    }
-    public void pickAndDropElement(){
-        WebElement draggableElement = driver.findElement(By.id("draggable"));
-        WebElement droppableElement = driver.findElement(By.xpath("//div[@id='simpleDropContainer']//div[@id='droppable']"));
-        String initialTargetText= droppableElement.getText(); //am salvat textul de pe element intr-un string;
-        Actions action = new Actions(driver);
-        //se ia elementul care se trage si se lasa in Element;
-        action.dragAndDrop(draggableElement,droppableElement).release().perform();
-        Assert.assertNotEquals(droppableElement.getText(),initialTargetText,"Initial text is the same with actual text after element dropped");
-        System.out.println("Initial text is: " + initialTargetText + " Text after successful drop: " + droppableElement.getText());
-    }
+
+  */
+
 }
 

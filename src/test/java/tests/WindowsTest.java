@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CommonPage;
+import pages.HomePage;
+import pages.WindowsPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +18,20 @@ public class WindowsTest extends BaseTest {
 
     @Test
     public void windowsTest() {
-        chooseMenu();
-        chooseSubMenu();
-        interactWithNewTab();
-        interactWithNewWindow();
-        interactWithNewMessageWindow();
+        HomePage homePage = new HomePage(driver);
+        homePage.isPageLoaded();
+        homePage.goToDesiredMenu("Alerts, Frame & WIndows");
+        CommonPage commonPage = new CommonPage(driver);
+        commonPage.isPageLoaded();
+        commonPage.goToDesiredSubMenu("Browser Windows");
+        WindowsPage windowsPage = new WindowsPage(driver);
+        windowsPage.isPageLoaded();
+        windowsPage.interactWithNewTab();
+        windowsPage.interactWithNewWindow();
+        windowsPage.interactWithNewMessageWindow();
     }
 
-
+    // Varianta bruta a testului
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {
 //        driver = new ChromeDriver();
@@ -32,7 +41,7 @@ public class WindowsTest extends BaseTest {
 //        driver.manage().window().maximize();
 //    }
     //facem o metoda care alege un meniu;
-
+/*
     public void chooseMenu() {
         //identificam meniul dorit si facem click pe el;
         WebElement alertsWindowsAndFramesMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
@@ -103,4 +112,6 @@ public class WindowsTest extends BaseTest {
         driver.close();
         driver.switchTo().window(windowsList.get(0));
     }
+
+ */
 }
