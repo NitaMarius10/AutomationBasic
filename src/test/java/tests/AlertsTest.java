@@ -12,16 +12,19 @@ import pages.HomePage;
 
 import java.time.Duration;
 
+import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
+import static constants.SubMenuConstants.ALERTS_SUBMENU;
+
 public class AlertsTest extends BaseTest {
 
     @Test
     public void alertsTest() {
         HomePage homePage= new HomePage(driver);
         homePage.isPageLoaded();
-        homePage.goToDesiredMenu("Alerts, Frame & Windows");
+        homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage= new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesiredSubMenu("Alerts");
+        commonPage.goToDesiredSubMenu(ALERTS_SUBMENU);
         AlertsPage alertsPage= new AlertsPage(driver);
         alertsPage.isPageLoaded();
         alertsPage.interactWithFirstAlert();
@@ -29,7 +32,6 @@ public class AlertsTest extends BaseTest {
         alertsPage.interactWithConfirmAlert("Cancel");
         alertsPage.interactWithPromptBox("Demetra");
     }
-
 //IMPLEMENTAREA BRUTA A TESTULUI
     //facem o metoda care deschide un browser;
 //    public void openBrowser() {
@@ -108,4 +110,4 @@ public class AlertsTest extends BaseTest {
 //            WebElement promptResult= driver.findElement(By.id("promptResult"));
 //            Assert.assertTrue(promptResult.getText().contains(alertValue),"You didn't enter the right name. In that box " + promptResult.getText());
 //        }
-    }
+}

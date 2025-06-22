@@ -12,7 +12,6 @@ public class FramesPage extends BasePage {
     private By frameTextValueLocator= By.id("sampleHeading");
     private By frameTwoLocator= By.id("frame2");
 
-    String expectedText = "This is a sample page";
 
     public FramesPage(WebDriver driver) {
         super(driver);
@@ -20,22 +19,21 @@ public class FramesPage extends BasePage {
 
     @Override
     public void isPageLoaded() {
-        Assert.assertEquals(driver.findElement(pageTitle).getText(),
-                "Frames","Page is not loaded properly");
+        Assert.assertEquals(elementMethods.getTextFromElement(pageTitle),"Frames","Page is not loaded properly");
     }
 
-    public void interactWithFrameOne(){
+    public void interactWithFrameOne(String expectedTextValue){
         //schimbare de focus pe frame(prima pagina);
-        driver.switchTo().frame(driver.findElement(frameOneLocator));
-        Assert.assertEquals(driver.findElement(frameTextValueLocator).getText(), expectedText, "Text is not displayed properly");
-        System.out.println("Frame one text is: " + driver.findElement(frameTextValueLocator).getText());
-        driver.switchTo().defaultContent(); //shimbam focusul pe pagina initiala;
+        frameMethods.switchToFrame(frameOneLocator);
+        Assert.assertEquals(elementMethods.getTextFromElement(frameTextValueLocator), expectedTextValue, "Text is not displayed properly");
+        System.out.println("Frame one text is: " + elementMethods.getTextFromElement(frameTextValueLocator));
+        frameMethods.switchToDefaultPage();
     }
-    public void interactWithFrameTwo(){
+    public void interactWithFrameTwo(String expectedTextValue){
         //schimbare de focus pe frame(prima pagina);
-        driver.switchTo().frame(driver.findElement(frameTwoLocator));
-        Assert.assertEquals(driver.findElement(frameTextValueLocator).getText(), expectedText, "Text is not displayed properly");
-        System.out.println("Frame two text is: " + driver.findElement(frameTextValueLocator).getText());
-        driver.switchTo().defaultContent(); //shimbam focusul pe pagina initiala;
+        frameMethods.switchToFrame(frameTwoLocator);
+        Assert.assertEquals(elementMethods.getTextFromElement(frameTextValueLocator), expectedTextValue, "Text is not displayed properly");
+        System.out.println("Frame two text is: " + elementMethods.getTextFromElement(frameTextValueLocator));
+        frameMethods.switchToDefaultPage();
     }
 }

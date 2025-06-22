@@ -2,32 +2,36 @@ package helpers;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
+import java.util.function.Function;
 
 public class ElementMethods {
 
     public WebDriver driver;
     WebDriverWait wait;
     JavascriptExecutor js;
-    Actions actions;
+    Actions action;
 
     public ElementMethods(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        js = (JavascriptExecutor) driver ;
-        actions = new Actions(driver);
+        js = (JavascriptExecutor) driver;
+        action = new Actions(driver);
     }
 
     public void scrollPageDown(String scrollValue) {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0," + scrollValue + ")");
     }
 
     public WebElement getElement(By locator){
+//        waitForElement(locator);
         return driver.findElement(locator);
     }
 
@@ -75,15 +79,53 @@ public class ElementMethods {
         element.sendKeys(keyValue);
     }
 
-    public void elementFromListByText(By locator, String textValue){
-        for (WebElement menuName : getElements(locator)) {
-            if (menuName.getText().equals(textValue)) {
-                menuName.click();
+    public void chooseElementFromListByText(By locator, String textValue){
+        for (WebElement element : getElements(locator)) {
+            if (element.getText().equals(textValue)) {
+                element.click();
                 break;
             }
         }
     }
 
+    public void chooseElementFromListByText(List<WebElement> elementsList, String textValue){
+        for (WebElement element : elementsList) {
+            if (element.getText().equals(textValue)) {
+                element.click();
+                break;
+            }
+        }
+    }
+
+    public void pickAndDropElement(By actual, By next){
+        waitForElement(actual);
+        action.clickAndHold(getElement(actual)).moveToElement(getElement(next)).release().build().perform();
+    }
+
+    public String getTextFromElement(By locator){
+        waitForElement(locator);
+        return getElement(locator).getText();
+    }
+
+    public void selectElementByText(By locator, String textValue){
+        waitForElement(locator);
+        Select selectElement = new Select(driver.findElement(locator));
+        selectElement.selectByVisibleText(textValue);
+    }
+
+    public void uploadDocument(By locator, String pathValue){
+        String pictureFilePaths = "src/test/resources/picture/" + pathValue;
+        File file = new File(pictureFilePaths);
+        getElement(locator).sendKeys(file.getAbsolutePath());
+    }
+
+    public void setWait(Long miliSeconds){
+        try {
+            wait(miliSeconds);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }
