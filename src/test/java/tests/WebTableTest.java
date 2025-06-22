@@ -1,18 +1,10 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
 import pages.WebTablePage;
 import propertyUtility.PropertyUtility;
-
-import java.util.List;
 import java.util.Map;
 
 import static constants.MenuConstants.ELEMENTS_MENU;

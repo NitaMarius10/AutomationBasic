@@ -1,18 +1,10 @@
 package tests;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
 import propertyUtility.PropertyUtility;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static constants.MenuConstants.FORMS_MENU;

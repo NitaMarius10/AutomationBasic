@@ -1,16 +1,9 @@
 package tests;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
 import pages.CommonPage;
 import pages.HomePage;
-
-import java.time.Duration;
 
 import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
 import static constants.SubMenuConstants.ALERTS_SUBMENU;

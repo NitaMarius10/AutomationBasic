@@ -1,19 +1,10 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
 import pages.WindowsPage;
 import propertyUtility.PropertyUtility;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
 import static constants.SubMenuConstants.WINDOWS_SUBMENU;

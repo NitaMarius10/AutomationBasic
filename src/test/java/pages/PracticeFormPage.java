@@ -1,10 +1,7 @@
 package pages;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
